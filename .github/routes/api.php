@@ -22,5 +22,12 @@ Route::middleware('auth:sanctum')->group(function () {
     
     // Minimalni zahtev: Jedna resource ruta koja pokriva kompletan CRUD
     Route::apiResource('appointments', AppointmentController::class);
+
+    Route::get('/user/profile', function (Request $request) {
+        return response()->json([
+            'success' => true,
+            'data' => $request->user()
+        ]);
+    });
     
 });
