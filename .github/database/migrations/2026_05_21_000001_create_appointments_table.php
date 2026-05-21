@@ -14,7 +14,12 @@ return new class extends Migration
             $table->foreignId('patient_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('doctor_id')->constrained('users')->onDelete('cascade');
             $table->string('appointment_date'); // Privremeno kao string da bismo kasnije menjali
+            $table->dateTime('appointment_date'); // Datum i vreme pregleda
+            $table->text('symptoms')->nullable(); // Simptomi koje pacijent navodi
+            $table->text('diagnosis')->nullable(); // Dijagnoza koju doktor upisuje
+            $table->string('status')->default('zakazan'); // Status: zakazan, zavrsen, otkazan
             $table->timestamps();
+            
         });
     }
 
