@@ -13,6 +13,14 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
+    public const ROLE_PATIENT = 'patient';
+
+    public const ROLE_NURSE = 'nurse';
+
+    public const ROLE_DOCTOR = 'doctor';
+
+    public const ROLE_ADMIN = 'admin';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +30,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
