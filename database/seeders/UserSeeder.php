@@ -42,6 +42,31 @@ class UserSeeder extends Seeder
             'email' => 'marko.stojanovic@ehealth.test',
         ]);
 
-        User::factory(20)->patient()->create();
+        User::factory()->patient()->create([
+            'name' => 'Milan Jovanovic',
+            'email' => 'milan.jovanovic@patients.ehealth.test',
+        ]);
+
+        User::factory()->patient()->create([
+            'name' => 'Ivana Nikolic',
+            'email' => 'ivana.nikolic@patients.ehealth.test',
+        ]);
+
+        User::factory()->patient()->create([
+            'name' => 'Petar Ilic',
+            'email' => 'petar.ilic@patients.ehealth.test',
+        ]);
+
+        User::factory()->patient()->create([
+            'name' => 'Sara Stankovic',
+            'email' => 'sara.stankovic@patients.ehealth.test',
+        ]);
+
+        User::factory()->patient()->create([
+            'name' => 'Dusan Popovic',
+            'email' => 'dusan.popovic@patients.ehealth.test',
+        ]);
+
+        User::factory(15)->patient()->create();
     }
 }

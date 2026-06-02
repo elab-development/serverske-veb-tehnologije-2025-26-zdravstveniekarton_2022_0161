@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
+use Database\Factories\MedicalRecordFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
 class MedicalRecord extends Model
 {
+    /** @use HasFactory<MedicalRecordFactory> */
+    use HasFactory;
+
     /**
      * @var list<string>
      */

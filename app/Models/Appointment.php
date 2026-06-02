@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
+use Database\Factories\AppointmentFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
 {
+    /** @use HasFactory<AppointmentFactory> */
+    use HasFactory;
+
     public const STATUS_REQUESTED = 'requested';
 
     public const STATUS_SCHEDULED = 'scheduled';
