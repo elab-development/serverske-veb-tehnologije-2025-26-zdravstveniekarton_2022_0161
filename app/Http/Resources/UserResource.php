@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'role' => $this->role,
+            'medical_record' => MedicalRecordResource::make($this->whenLoaded('medicalRecord')),
         ];
     }
 }
