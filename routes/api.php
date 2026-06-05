@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\MedicalRecordController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -17,6 +18,13 @@ Route::middleware('auth:sanctum')->group(function (): void {
     Route::apiResource('medical-records', MedicalRecordController::class)->only([
         'index',
         'show',
+        'update',
+    ]);
+
+    Route::apiResource('appointments', AppointmentController::class)->only([
+        'index',
+        'show',
+        'store',
         'update',
     ]);
 });
