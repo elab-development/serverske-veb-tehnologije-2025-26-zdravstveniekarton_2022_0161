@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\MedicalRecordController;
+use App\Http\Controllers\MedicalVisitController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,13 @@ Route::middleware('auth:sanctum')->group(function (): void {
     ]);
 
     Route::apiResource('appointments', AppointmentController::class)->only([
+        'index',
+        'show',
+        'store',
+        'update',
+    ]);
+
+    Route::apiResource('medical-visits', MedicalVisitController::class)->only([
         'index',
         'show',
         'store',
